@@ -6,7 +6,7 @@ import {
   View,
   type TextStyle,
 } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export interface AppbarProps {
   leftIcon?: React.ReactNode;
@@ -36,33 +36,37 @@ function MobikulAppbar({
   );
 
   return (
-    <SafeAreaProvider>
-      <SafeAreaView key={'Appbar'} style={[headerStyle]} edges={['top']}>
-        <View style={styles.container}>
-          <View>{leftIcon ? leftIcon : null}</View>
-          <View style={styles.headerTitleStyle}>
-            <Text style={[headerTextStyle, headerTitleStyle]}>
-              {headerTitle}
-            </Text>
-          </View>
-          <View style={styles.actionsIcon}>{actionsIcon}</View>
+    <SafeAreaView key={'Appbar'} style={[headerStyle]} edges={['top']}>
+      <View style={styles.container}>
+        <View style={styles.leftIconStyle}>{leftIcon ? leftIcon : null}</View>
+        <View style={styles.headerTitleStyle}>
+          <Text style={[headerTextStyle, headerTitleStyle]}>{headerTitle}</Text>
         </View>
-      </SafeAreaView>
-    </SafeAreaProvider>
+        <View style={styles.actionsIcon}>{actionsIcon}</View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   headerStyle: {
     backgroundColor: '#3498db',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1000,
   },
   container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
     height: 45,
+    paddingHorizontal: '2%',
   },
   headerTitleStyle: {
     position: 'absolute',
-    top: 0,
+    top: '20%',
     bottom: 0,
     right: 0,
     left: 0,
@@ -73,13 +77,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   leftIconStyle: {
-    fontSize: PixelRatio.getPixelSizeForLayoutSize(12),
+    flexDirection: 'row',
+    // paddingVertical: "1%",
+    // position: 'absolute',
+    // left: '2%',
+    // top: "0%",
   },
   actionsIcon: {
     flexDirection: 'row',
     gap: '2%',
-    position: 'absolute',
-    right: '2%',
+    // position: 'absolute',
+    // right: '2%',
+    // top: "0%",
   },
 });
 export default MobikulAppbar;

@@ -1,6 +1,8 @@
 # MobikulAppbar
 
-A customizable Appbar component for React Native, built using `react-native-safe-area-context`. This component provides a flexible and easily configurable app bar with optional icons and styling.
+A customizable Appbar component for React Native, built using `react-native-safe-area-context`. This component provides a flexible and easily configurable app bar with optional icons and styling. To find out more [mobikul.com](https://mobikul.com/)
+
+<img src="./src/assets/image.png" alt="MobikulAlert Preview" width="300" />
 
 ## Installation
 
@@ -75,4 +77,4 @@ If you would like to contribute, feel free to fork the repository and submit a p
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
