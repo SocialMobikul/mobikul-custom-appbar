@@ -1,13 +1,25 @@
-import { multiply } from 'mobikul-custom-appbar';
+import { MobikulAppbar } from 'mobikul-custom-appbar';
 import { Text, View, StyleSheet } from 'react-native';
-
-const result = multiply(3, 7);
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <>
+      <MobikulAppbar
+        key={'shsh'}
+        headerTitle="Mobikul"
+        headerTintColor="#fff"
+        actionsIcon={[
+          <Text key="cart" style={{ fontSize: 20, color: '#fff' }}>
+            &#x2661;
+          </Text>,
+        ]}
+      />
+      <View>
+        <View style={{ ...styles.container }}>
+          <Text>Safe Area Insets Top:20</Text>
+        </View>
+      </View>
+    </>
   );
 }
 
